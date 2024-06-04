@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: Chatter-Solutions
+    package:
+        name: Chatter-Solutions
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Chatter-Solutions/tests
+            options:
+                outputdir: robot/Chatter-Solutions/results
+
+    robot_testdoc:
+        options:
+            path: robot/Chatter-Solutions/tests
+            output: robot/Chatter-Solutions/doc/Chatter-Solutions_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
